@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ui_pack/widgets/signpad/main.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter UI Pack',
       theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple)),
-      home: const HomeScreen(),
+      home: SafeArea(child: const HomeScreen()),
     );
   }
 }
@@ -37,7 +38,7 @@ class HomeScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => const SignpadMain()));
               },
-              child: const Text('Go to Signpad Widget'),
+              child: const Text('Signpad'),
             ),
           ],
         ),

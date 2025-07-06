@@ -32,6 +32,6 @@ class _SignpadMainState extends State<SignpadMain> {
 
   @override
   Widget build(BuildContext context) {
-    return SignpadWidget(onSave: _showImageModal);
+    return SafeArea(child: SignpadWidget(onSave: _showImageModal));
   }
 }
